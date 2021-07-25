@@ -12,15 +12,19 @@ class Product {
     }
 
     //method to specify formatting of product
+    returnImage(){
+        var image = '<div class="productimage"><img src="../' + this.image + '" class="product"></div>';
+        return image;
+    }
+
     productDetails() {
 
-        var nameLine = '<a href="' + this.link + '"><span><h2>' + this.name + "<span><h2></a>";
-        var image = '<span><a href="' + this.link + '"><img src="../' + this.image + '" class="searchresultimage"></a></span>';
-        var rating = "<span><h2>Rating: </h2>" + displayRating(this.rating) + "<br></span>";
-        var price = "<span><h2>Price: </h2> $" + this.price + " CAD</span>";
-        var pageLink = '<span><h2><a href="' + this.link + '">Add to Cart</a><span><h2>';
+        var nameLine = '<span><h4>' + this.name + "</span></h4>";
+        var rating = "<span><h3>Rating: </h3>" + displayRating(this.rating) + "<br></span>";
+        var price = "<span><h3>Price: </h3> <h4>$" + this.price + " CAD</h4></span>";
+        var description = '<span><h3>Description: </h3>' + this.description + '</span>';
 
-        return (nameLine + image + rating + price + pageLink);
+        return (  nameLine+ rating + price + description);
     }
 }
 
@@ -78,14 +82,26 @@ let product = url.split('/').pop().split('.')[0];
 console.log(product);
 
 for (let i = 0; i < productsArray.length; i++) {
-    let container = document.getElementsByClassName("product")[0];
-    console.log(productsArray[i].link);
-    if (productsArray[i].link == product) {
-        let productContainer = document.createElement("div");
-        productContainer.setAttribute("class", "grid-item");
-        container.appendChild(productContainer);
 
-        // document.getElementsByClassName("grid-item")[i].innerHTML = filteredProducts[i].productDetailsSearchPage() + '<form><input type="submit" value="Add to Cart"></form>';
-        document.getElementsByClassName("grid-item")[0].innerHTML = productsArray[i].productDetails();
+    let container = document.getElementsByClassName("product")[0];
+
+    //print product information based on what product page you are on
+    //if element in product array matches product, print its info
+    if (productsArray[i].link == product) {
+
+        //add image html to product div
+        container.innerHTML = productsArray[i].returnImage();
+
+        //add div element for product details to go in
+        let productContainer = document.createElement("div");
+        productContainer.setAttribute("class", "productdescription");
+        container.appendChild(productContainer);
+        //print product details to productdescription div
+        document.getElementsByClassName("productdescription")[0].innerHTML = productsArray[i].productDetails();
     }
 }
+
+///////////NEED TO DO:
+//Add quantity button
+//Add to cart button
+//Update price instantly based on the selected quantity

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Part 1 - Online Store Product Page</title>
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+   <!--
+      block for header
+    -->
+    <div class="header">
+      <div class="header-back">
+        <div class="subtitle">
+          Retro Videogame Store
+        </div>
+      </div>
+      <header>
+        <nav>
+          <ul class="nav-bar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <div class="dropdown">
+              <button class="dropbtn">Products</button>
+              <div class="dropdown-content">
+                <a href="#">Consoles</a>
+                <a href="#">Games</a>
+                <a href="#">Repair parts</a>
+                <a href="#">Peripherals</a>
+              </div>
+            </div>
+            <li><a href="ShoppingCart.html">View Cart</a></li>
+          </ul>
+        </nav>
+        <form class="search" style="margin:auto;max-width:300px">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <a class="cta" href="#"><button>Contact us</button></a>
+        <a class="cta" href="SignUpPage.html"><button>Login</button></a>
+      </header>
+    </div>
+
+    <!--
+      block for sign up form
+    -->
+
+    <div class="signupform">
+      <form>
+        <!--title -->
+        <span class="row">
+          <h1>Create Account</h1>
+        </span>
+        <!--subtitle -->
+        <span class="row">
+          <h2>Register</h2>
+        </span>
+        <!--form input -->
+        <!--first name-->
+        <span class="row">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+        </span>
+        <!--last name-->
+        <span class="row">
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+        </span>
+        <!--email-->
+        <span class="row">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+        </span>
+        <!--password-->
+        <span class="row">
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="password" required>
+        </span>
+        <!--submit-->
+        <span class="row">
+        <input type="submit" id="submit" name="submit">
+        </span>
+      </form>
+    </div>
+    <!--
+      footer
+      -->
+    <div class="footer">
+      <div class="footertext">
+        <p>
+        <h3>Contact Information</h3>
+        </p>
+        <p>Email: CST8285@algonquinlive.com</p>
+        <p>Phone: 613-555-5555</p>
+        <div class="social">
+          <a href="#">INSTAGRAM </a>
+          <a href="#">FACEBOOK </a>
+          <a href="#">TWITTER </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

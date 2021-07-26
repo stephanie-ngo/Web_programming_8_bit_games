@@ -166,7 +166,7 @@ form.search::after {
 
 /*font styling*/
 
-h1 {
+h1, h4 {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -188,7 +188,8 @@ input[type=text] {
 /*************footer***********/
 
 .footer {
-  margin-top: 10%;
+  position: fixed;
+  /*margin-top: 10%;*/
   left: 0;
   bottom: 0;
   width: 100%;
@@ -524,12 +525,21 @@ img.searchresultimage {
   font-size: 20px;
 }
 
-.signupform input[type='password']{
+.signupform [type='password']{
   border: 1px solid grey;
   width: 70%;
   float: right;
   background: #f1f1f1;
   height: 40px;
+}
+
+.signupform textarea{
+  border: 1px solid grey;
+  width: 70%;
+  float: right;
+  background: #f1f1f1;
+  height: 40px;
+  resize: vertical;
 }
 
 .signupform input[type=submit] {

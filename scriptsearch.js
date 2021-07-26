@@ -59,7 +59,12 @@ productsArray[4] = new Product("Gamecube System Platinum Silver Console",
   119.99,
   "Description",
   "gamecube-system-platinum-silver-console");
-
+productsArray[5] = new Product("Gameboy Advance SP Replacement Battery",   // ADD NEW ITEMS FROM HERE!!!
+  "images/searchresult/product5.jpg",
+  5,
+  16.99,
+  "Description",
+  "gameboy-advance-sp-replacement-battery");
 
 
 

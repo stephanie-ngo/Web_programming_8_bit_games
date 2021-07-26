@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Part 1 - Online Store Product Page</title>
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   
+       <!--Subtitle -->
+    <div class="header">
+        <div class="header-back">
+          <div class="subtitle">
+            Retro Videogame Store
+          </div>
+        </div>
+    <header>
+        <!--The top background-->
+            <!--Navbar with dropdown menu with the featured products separated by categories/sub-categories-->
+            <!--<img class="logo" src="C:\Users\andr3\Downloads\gamepad.png" alt="logo">-->
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Products</button>
+                        <div class="dropdown-content">
+                            <a href="consoles.html">Consoles</a>
+                            <a href="games.html">Games</a>
+                            <a href="repair.html">Repair parts</a>
+                            <a href="peripherals.html">Peripherals</a>
+                        </div>
+                    <!--<li><a href="#">Products</a></li>-->
+                    </div>
+                    <li><a href="ShoppingCart.html">View Cart</a></li>
+                </ul>
+            </nav>
+            <form class="search" style="margin:auto;max-width:300px">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit" onclick='window.open("search.html")'><i class="fa fa-search"></i></button>
+            </form>
+            <a class="cta" href="contact.html"><button>Contact us</button></a>
+            <a class="cta" href="SignUpPage.html"><button>Login</button></a>
+    </header>
+</div>
+
+<!--
+    block for index page
+-->
+    <!--
+      Promotion banner
+      -->
+    <div class="promotion" style="width: 100vw; height: 50px; background-color: rgba(137, 142, 146, 1);">
+        <a class="text" href="#">CHECK OUR DISCOUNTS FOR STUDENTS!</a>
+        <a class="cta" href="#"><button>Learn More</button></a>
+    </div>
+
+    <div class="about-us" style="position: fixed; text-align: center; margin: 10% 15%;">
+    <p>
+        <h1>About us:</h1><br><br>
+    </p>   
+    <p>
+        <h4>The BitGames is an online store created in 2021 dedicated to lovers of retro games or for those who just want to learn about the games played by older generations.</h4><br>
+        <h4>If you consider yourself part of this groups of retro gamers, we truly hope you enjoy our store.</h4><br>
+        <h4>Please feel welcomed here!</h4>
+    </p>
+    </div>   
+
+        <!--
+          footer
+          -->
+        <div class="footer">
+            <div class="footertext">
+              <p>
+              <h3>Contact Information</h3>
+              </p>
+              <p>Email: CST8285@algonquinlive.com</p>
+              <p>Phone: 613-555-5555</p>
+              <div class="social">
+                <a href="#">INSTAGRAM </a>
+                <a href="#">FACEBOOK </a>
+                <a href="#">TWITTER </a>
+              </div>
+            </div>
+            
+        </div>
+</body>
+</html>

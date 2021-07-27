@@ -2,12 +2,11 @@
 //define class constructor and methods
 ////////////////////////////////
 class Product {
-    constructor(name, image, rating, price, /*counter*/description, link) {
+    constructor(name, image, rating, price, description, link) {
         this.name = name;
         this.image = image;
         this.rating = rating;
         this.price = price;
-        //this.counter = counter;
         this.description = description;
         this.link = link;
     }
@@ -22,9 +21,8 @@ class Product {
 
         var nameLine = '<span><h4>' + this.name + "</span></h4>";
         var rating = "<span><h3>Rating: </h3>" + displayRating(this.rating) + "<br></span>";
-        var price = "<span><h3>Price: </h3> <h4>$" + changePrice(this.price) + " CAD</h4></span>";
+        var price = "<span><h3>Price: </h3> <h4>$" + this.price + " CAD</h4></span>";
         var description = '<span><h3>Description: </h3>' + this.description + '</span>';
-        //var counter = '<div class="counter"><h3>Quantity</h3>' + changeCounter(this.counter) + '</div>'
 
         return (  nameLine+ rating + price + description);
     }
@@ -41,47 +39,6 @@ function displayRating(rating) {
     return ratingHTML;
 }
 
-//  TRYING TO MAKE A COUNTER FUNCTION TO USE IN THE CHANGEPRICE FUNCTION BELOW
-/*
-function changeCounter(counter){
-    if (user clicks on +){
-        function increaseCount(a,b){
-            var input = b.previousElementSibling;
-            var value = parseInt(input.value, 10);
-            value = isNaN(value) ? 0 : value;
-            value++;
-            input.value = value; 
-        }
-    } else if{user click on -}{
-        function decreaseCount(a, b) {
-            var input = b.nextElementSibling;
-            var value = parseInt(input.value, 10);
-            if (value > 1) {
-              value = isNaN(value) ? 0 : value;
-              value--;
-              input.value = value;
-            }
-        }
-    }
-}
-
-function changePrice(price){
-    return price*1;
-}
-/*function changePrice(price) {
-    varpriceHTML = price;
-    if(Let quantity == 0){
-
-    }else if( quantity > 0){
-        for (quantity = 1; quantity <= 20; quantity++){
-            price = *quantity;
-        }
-    } 
-}*/
-
-var shoppingCart = (function() {
-    cart = [];
-})
 ////////////////////////////////
 //array of product objects
 ////////////////////////////////
@@ -123,6 +80,8 @@ productsArray[5] = new Product("Gameboy Advance SP Replacement Battery",   // AD
     "Capacity: 850mAh; Volts: 3.7V; Lithium ion cell; Dimensions: 1.94 x 1.11 x 0.19 (in); Weight: 2.12 oz.",
     "gameboy-advance-sp-replacement-battery");
 
+
+
 //The split() function creates an array of string, after removing all the forward slash (/) from the url string. The pop() function will return the last element
 //get name of product
 let url = window.location.href;
@@ -145,7 +104,11 @@ for (let i = 0; i < productsArray.length; i++) {
         productContainer.setAttribute("class", "productdescription");
         container.appendChild(productContainer);
         //print product details to productdescription div
+
         document.getElementsByClassName("productdescription")[0].innerHTML = productsArray[i].productDetails();
+
+
+
     }
 }
 

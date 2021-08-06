@@ -2,47 +2,12 @@
 <html>
 <head>
     <title>Project Part 1 - Online Store Product Page</title>
-    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
    
-       <!--Subtitle -->
-    <div class="header">
-        <div class="header-back">
-          <div class="subtitle">
-            Retro Videogame Store
-          </div>
-        </div>
-    <header>
-        <!--The top background-->
-            <!--Navbar with dropdown menu with the featured products separated by categories/sub-categories-->
-            <!--<img class="logo" src="C:\Users\andr3\Downloads\gamepad.png" alt="logo">-->
-            <nav>
-                <ul class="nav-bar">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <div class="dropdown">
-                        <button class="dropbtn">Products</button>
-                        <div class="dropdown-content">
-                            <a href="consoles.html">Consoles</a>
-                            <a href="games.html">Games</a>
-                            <a href="repair.html">Repair parts</a>
-                            <a href="peripherals.html">Peripherals</a>
-                        </div>
-                    <!--<li><a href="#">Products</a></li>-->
-                    </div>
-                    <li><a href="ShoppingCart.html">View Cart</a></li>
-                </ul>
-            </nav>
-            <form class="search" style="margin:auto;max-width:300px">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit" onclick='location.href="search.html"; return false;'><i class="fa fa-search"></i></button>
-            </form>
-            <a class="cta" href="contact.html"><button>Contact us</button></a>
-            <a class="cta" href="SignUpPage.html"><button>Login</button></a>
-    </header>
-</div>
+       <?php include('header.php'); ?>
 
 <!--
     block for index page

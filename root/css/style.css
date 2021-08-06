@@ -28,7 +28,7 @@ div.header-back {
   padding: 0 auto;
   width: 100%;
   height: 130px;
-  background-image: url('images/headerimg.png');
+  background-image: url('../images/headerimg.png');
   background-repeat: no-repeat;
   background-size: 400px;
   background-color: rgb(123, 203, 243);

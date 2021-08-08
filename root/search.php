@@ -18,7 +18,23 @@
 
 <form action="search.php" method="get">
 
-
+            <!--Filter by price -->
+            <div class="searchoptions-item">
+          <label for="checkbox">
+            <h2>Filter by Price:</h2>
+          </label>
+          <input type="checkbox" id="price1" name="price" value="25">
+          <label for="price1">Under $25</label><br>
+          <input type="checkbox" id="price2" name="price" value="25">
+          <label for="price2">$25 - $75</label><br>
+          <input type="checkbox" id="price3" name="price" value="75">
+          <label for="price3">$75 - $150</label><br>
+          <input type="checkbox" id="price4" name="price" value="150">
+          <label for="price4">$150 - $300</label><br>
+          <input type="checkbox" id="price5" name="price" value="300">
+          <label for="price5">Over $300</label><br>
+          <br><br>
+        </div>
 
         <!--Filter by rating -->
         <div class="searchoptions-item">
@@ -35,8 +51,19 @@
           <label for="rating5">5 Stars and Up</label><br><br>
         </div>
 
+          <!--sort by price or rating -->
         <div class="searchoptions-item">
-        <button type="submit" value="Submit">Submit</button>  
+          <h2>Sort By:</h2>
+          <input type="radio" id="sort1" name="sort" value="Best rating">
+          <label>Best rating</label><br>
+          <input type="radio" id="sort2" name="sort" value="Lowest price first">
+          <label>Lowest price first</label><br>  
+          <input type="radio" id="sort3" name="sort" value="Highest price first">
+          <label>Highest price first</label><br><br>
+        </div>
+
+        <div class="searchoptions-item">
+        <span class="cta"><button type="submit" value="Submit">Submit</button></span>
         </div>    
 
 

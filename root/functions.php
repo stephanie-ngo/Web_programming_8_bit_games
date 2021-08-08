@@ -21,22 +21,37 @@ function displayRating($rating) {
 
 //if no search terms entered, then display all products
 
+//1=1 is used when conditions aren't set yet for sql clause.
+$querySubString = "1 = 1";
 
-if (!isset($_GET["search"])) {
-    //echo 'no search';
-    $sql = "SELECT * from product";
+//if (!isset($_GET["search"])) {
+//    $sql = "SELECT * from product";
 //if $_GET["search"] contains element, then query table for matches in name
-} elseif (isset($_GET["search"]) && !isset($_GET["rating"])) {
-    //echo 'search and no filter';
+//} 
+if (isset($_GET["search"])) {
     //trim function to remove whitespace
     $querystring = trim($_GET["search"]);
-    $sql         = "SELECT * from product where name LIKE '%$querystring%'";    
+    $querySubString .= " AND name LIKE '%$querystring%'";    
 }
-
 if (isset($_GET["rating"])) {
     $rating = $_GET["rating"];
-    $sql = "SELECT * from product where Rating >= '$rating'";
+    $querySubString .= " AND Rating >= '$rating'";
 }
+if (isset($_GET["price"])) {
+    $price = $_GET["price"];
+    $querySubString .= " AND Price <= '$price'";
+
+    if (is_array($price) || is_object($price))
+    {
+        foreach ($price as $number){ 
+            echo $number."<br />";
+        }
+    }
+}
+
+echo $querySubString;
+$sql = "SELECT * FROM product WHERE $querySubString";
+
 
 //runs the query and puts the resulting data into a variable called $result.
 //$mysqli is the connection variable from connect.php
@@ -44,7 +59,7 @@ $result = $mysqli->query($sql);
 
 //if no results found, print statement
 if (isset($_GET["search"]) && $result->num_rows == 0){
-    echo "No results found for '$querystring'.";
+    echo "No results found.";
 }
 
 // Get the  query rows as an associative array
@@ -60,7 +75,7 @@ foreach ($rows as $row) {
     displayRating($row['Rating']);
     echo "<br></span>";
     echo "<span><h2>Price: </h2> $" . $row['Price'] . " CAD</span>";
-    echo '<span><h2><a href="products/' . $row['link'] . '.php">Add to Cart</a><span><h2>';
+    echo '<span><h2><a class="cta" href="products/' . $row['link'] . '.php"><button>Add to Cart</button></a><span><h2>';
     echo '</div>';
 }
 

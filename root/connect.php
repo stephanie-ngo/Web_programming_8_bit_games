@@ -10,7 +10,7 @@ $user = 'root';
 $passwd = '';
 
 /* The schema you want to use */
-$schema = 'product';
+$schema = 'products';
 
 /* Connection with MySQLi, procedural-style */
 $mysqli = mysqli_connect($host, $user, $passwd, $schema);
@@ -24,4 +24,4 @@ if (!$mysqli)
    die();
 }
 
-echo 'Successfully connected!<br>';
+//echo 'Successfully connected!<br>';

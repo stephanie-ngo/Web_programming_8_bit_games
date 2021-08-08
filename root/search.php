@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <?php include('header.php'); ?>
+    <!--
+        The include statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
+     -->
+     <?php include('header.php'); ?>
 
     <!--
       block for search results contents
@@ -71,6 +74,39 @@
 
       <!--Listed items -->
       <div class="grid-container" id="productGrid">
+
+      <?php
+        // check connection
+        require 'connect.php';
+
+        include('functions.php');
+
+        //sql query
+        $sql = "SELECT * from product";
+
+        //runs the query and puts the resulting data into a variable called $result.
+        //$mysqli is the connection variable from connect.php
+        $result = $mysqli->query($sql);
+
+        // Get the  query rows as an associative array
+        //MYSQLI_ASSOC is parameter is a constant indicating what type of array should be produced from the current row data
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+
+        //dispplays the data from the database
+        foreach($rows as $row) {
+            echo '<div class="grid-item">';
+            echo '<a href="products/' . $row['link']. '.php"><span><h2>' . $row['Name']. "<span><h2></a>";
+            echo  '<span><a href="products/' . $row['link']. '.php"><img src="images/searchresult/' . $row['image']. '.jpg" class="searchresultimage"></a></span>';
+            echo  "<span><h2>Rating: </h2>";
+            displayRating( $row['Rating']);
+            echo  "<br></span>";
+            echo  "<span><h2>Price: </h2> $" . $row['Price']. " CAD</span>";
+            echo '<span><h2><a href="products/' . $row['link'].'.php">Add to Cart</a><span><h2>'; 
+            echo '</div>';
+        }
+
+        $mysqli->close();
+        ?>
 
       </div>
     </div>

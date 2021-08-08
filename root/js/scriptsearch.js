@@ -74,16 +74,16 @@ productsArray[5] = new Product("Gameboy Advance SP Replacement Battery",
 
 //display ratings as star images
 //for the number of stars, add a yellow star from the Font Awesome Icon Library. If the number of stars is less than 5, make the remaining stars black
-function displayRating(rating) {
-  var ratingHTML = "";
-  for (let i = 0; i < rating; i++) {
-      ratingHTML = ratingHTML.concat('<span class="fa fa-star checked"></span>');
-  }
-  for (let i = 0; i < (5 - rating); i++) {
-      ratingHTML = ratingHTML.concat('<span class="fa fa-star"></span>')
-  }
-  return ratingHTML;
-}
+// function displayRating(rating) {
+//   var ratingHTML = "";
+//   for (let i = 0; i < rating; i++) {
+//       ratingHTML = ratingHTML.concat('<span class="fa fa-star checked"></span>');
+//   }
+//   for (let i = 0; i < (5 - rating); i++) {
+//       ratingHTML = ratingHTML.concat('<span class="fa fa-star"></span>')
+//   }
+//   return ratingHTML;
+// }
 
 //filter products by rating
 //declare empty array
@@ -174,4 +174,4 @@ function displayProduct(filteredProducts) {
 //display all products when page loads
 ////////////////////////////////
 
-displayProduct(productsArray);
+//displayProduct(productsArray);

@@ -1,10 +1,10 @@
 <?php
 
-       // check connection
-       require 'connect.php';
+// create and check connection
+//stored in variable $mysqli 
+require 'connect.php';
 
-//display correct amount of stars corresponding to rating
-
+//function display correct amount of star images corresponding to rating in database
 function displayRating($rating) {
 
     for ($x = 0; $x < $rating; $x++) {
@@ -17,39 +17,29 @@ function displayRating($rating) {
 
   }
 
-  //sql query
+//sql query
 
 //if no search terms entered, then display all products
-
 //1=1 is used when conditions aren't set yet for sql clause.
 $querySubString = "1 = 1";
 
-//if (!isset($_GET["search"])) {
-//    $sql = "SELECT * from product";
 //if $_GET["search"] contains element, then query table for matches in name
-//} 
 if (isset($_GET["search"])) {
     //trim function to remove whitespace
     $querystring = trim($_GET["search"]);
     $querySubString .= " AND name LIKE '%$querystring%'";    
 }
-if (isset($_GET["rating"])) {
-    $rating = $_GET["rating"];
+if (isset($_POST["rating"])) {
+    $rating = $_POST["rating"];
     $querySubString .= " AND Rating >= '$rating'";
 }
-if (isset($_GET["price"])) {
-    $price = $_GET["price"];
-    $querySubString .= " AND Price <= '$price'";
-
-    if (is_array($price) || is_object($price))
-    {
-        foreach ($price as $number){ 
-            echo $number."<br />";
-        }
-    }
+if (isset($_POST["price"])) {
+    $price = $_POST["price"];
+    $querySubString .= " AND Price $price";
 }
 
-echo $querySubString;
+
+//echo $querySubString;
 $sql = "SELECT * FROM product WHERE $querySubString";
 
 
@@ -58,7 +48,7 @@ $sql = "SELECT * FROM product WHERE $querySubString";
 $result = $mysqli->query($sql);
 
 //if no results found, print statement
-if (isset($_GET["search"]) && $result->num_rows == 0){
+if ($result->num_rows == 0){
     echo "No results found.";
 }
 
@@ -66,7 +56,7 @@ if (isset($_GET["search"]) && $result->num_rows == 0){
 //MYSQLI_ASSOC is parameter is a constant indicating what type of array should be produced from the current row data
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-//dispplays the data from the database
+//displays the data from the database
 foreach ($rows as $row) {
     echo '<div class="grid-item">';
     echo '<a href="products/' . $row['link'] . '.php"><span><h2>' . $row['Name'] . "<span><h2></a>";
@@ -79,6 +69,7 @@ foreach ($rows as $row) {
     echo '</div>';
 }
 
+//close connection
 $mysqli->close();
 
 

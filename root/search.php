@@ -16,23 +16,21 @@
       <!--Filter and Sort Search Results -->
       <div class="searchoptions">
 
-<form action="search.php" method="get">
+<form action="search.php" method="post">
 
             <!--Filter by price -->
             <div class="searchoptions-item">
-          <label for="checkbox">
             <h2>Filter by Price:</h2>
-          </label>
-          <input type="checkbox" id="price1" name="price" value="25">
+          <input type="radio" id="price1" name="price" value="<= 25">
           <label for="price1">Under $25</label><br>
-          <input type="checkbox" id="price2" name="price" value="25">
-          <label for="price2">$25 - $75</label><br>
-          <input type="checkbox" id="price3" name="price" value="75">
-          <label for="price3">$75 - $150</label><br>
-          <input type="checkbox" id="price4" name="price" value="150">
-          <label for="price4">$150 - $300</label><br>
-          <input type="checkbox" id="price5" name="price" value="300">
-          <label for="price5">Over $300</label><br>
+          <input type="radio" id="price2" name="price" value=">= 25 AND price <=50">
+          <label for="price2">$25 - $50</label><br>
+          <input type="radio" id="price3" name="price" value=">= 50 AND price <=100">
+          <label for="price3">$50 - $100</label><br>
+          <input type="radio" id="price4" name="price" value=">= 100 AND price <=150">
+          <label for="price4">$100 - $150</label><br>
+          <input type="radio" id="price5" name="price" value=">=150">
+          <label for="price5">Over $150</label><br>
           <br><br>
         </div>
 

@@ -5,7 +5,7 @@
       -->
     <div class="pagetitle">
       <a href="index.php">Home</a> > 
-      <a href="search.php">Search Results</a> 
+      <a href="products.php">Products</a> 
     </div>
 
     <!--Main page contents -->
@@ -16,7 +16,7 @@
       <!--Filter and Sort Search Results -->
       <div class="searchoptions">
 
-<form action="search.php" method="post">
+<form action="products.php" method="post">
 
             <!--Filter by price -->
             <div class="searchoptions-item">
@@ -52,11 +52,11 @@
           <!--sort by price or rating -->
         <div class="searchoptions-item">
           <h2>Sort By:</h2>
-          <input type="radio" id="sort1" name="sort" value="Best rating">
+          <input type="radio" id="sort1" name="sort" value="ORDER BY Rating DESC">
           <label>Best rating</label><br>
-          <input type="radio" id="sort2" name="sort" value="Lowest price first">
+          <input type="radio" id="sort2" name="sort" value="ORDER BY Price ASC">
           <label>Lowest price first</label><br>  
-          <input type="radio" id="sort3" name="sort" value="Highest price first">
+          <input type="radio" id="sort3" name="sort" value="ORDER BY Price DESC">
           <label>Highest price first</label><br><br>
         </div>
 
@@ -106,7 +106,7 @@
       <!--
       JavaScript
       -->
-    <script src="js/scriptsearch.js"></script> 
+    <!-- <script src="js/scriptsearch.js"></script>  -->
 
   </body>
 </html>

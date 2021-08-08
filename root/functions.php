@@ -37,7 +37,10 @@ if (isset($_POST["price"])) {
     $price = $_POST["price"];
     $querySubString .= " AND Price $price";
 }
-
+if (isset($_POST["sort"])) {
+    $sort = $_POST["sort"];
+    $querySubString .= " $sort";
+}
 
 //echo $querySubString;
 $sql = "SELECT * FROM product WHERE $querySubString";

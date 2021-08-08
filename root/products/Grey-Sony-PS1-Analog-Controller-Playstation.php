@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Project Part 2 - Online Store Product Page</title>
-    <link rel="stylesheet"  href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-</head>
-<body>
-
-<!--
-    block for header contents
--->
-
-<!--Subtitle -->
-<div class="header">
-  <div class="header-back">
-    <div class="subtitle">
-      Retro Videogame Store
-    </div>
-  </div>
-  <!--Navigation bar -->
-  <header>
-    <nav>
-      <ul class="nav-bar">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <div class="dropdown">
-          <button class="dropbtn">Products</button>
-          <div class="dropdown-content">
-            <a href="../consoles.html">Consoles</a>
-            <a href="../games.html">Games</a>
-            <a href="../repair.html">Repair parts</a>
-            <a href="../peripherals.html">Peripherals</a>
-          </div>
-        </div>
-        <li><a href="../ShoppingCart.html">View Cart</a></li>
-      </ul>
-    </nav>
-    <form class="search" style="margin:auto;max-width:300px">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit" onclick='location.href="../search.html"; return false;'><i class="fa fa-search"></i></button>
-    </form>
-    <a class="cta" href="#"><button>Contact us</button></a>
-    <a class="cta" href="#"><button>Login</button></a>
-  </header>
-</div>
+<?php include('headerproducts.php');?>
 
 
 
@@ -54,9 +8,9 @@
 
 <!--Navigation -->
 <div class="pagetitle">
-  <a href="../index.html">Home</a> > 
-  <a href="../search.html">Products</a> > 
-  <a href="../search.html">Peripherals</a> 
+  <a href="../index.php">Home</a> > 
+  <a href="../search.php">Products</a> > 
+  <a href="../search.php">Peripherals</a> 
 </div>
 
 <!--Main page contents -->

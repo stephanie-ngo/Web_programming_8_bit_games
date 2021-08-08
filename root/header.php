@@ -1,4 +1,13 @@
-<div class="header">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Part 1 - Online Store Product Page</title>
+    <link rel="stylesheet"  href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+      
+    <div class="header">
     <div class="header-back">
       <div class="subtitle">
         Retro Videogame Store

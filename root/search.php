@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Project Part 1 - Online Store Product Page</title>
-    <link rel="stylesheet"  href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <!--
-        The include statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
-     -->
-     <?php include('header.php'); ?>
+<?php include('header.php');?>
 
     <!--
       block for search results contents
@@ -26,63 +15,47 @@
 
       <!--Filter and Sort Search Results -->
       <div class="searchoptions">
-        <!--Filter by price -->
-        <div class="searchoptions-item">
-          <label for="radio">
-            <h2>Filter by Price:</h2>
-          </label>
-          <input type="radio" id="price1" name="filter" onclick="clearPage(); displayProduct(filterPrice(0, 25))">
-          <label for="price1">Under $25</label><br>
-          <input type="radio" id="price2" name="filter" onclick="clearPage(); displayProduct(filterPrice(25, 50))">
-          <label for="price2">$25 - $50</label><br>
-          <input type="radio" id="price3" name="filter" onclick="clearPage(); displayProduct(filterPrice(50, 75))">
-          <label for="price3">$50 - $75</label><br>
-          <input type="radio" id="price4" name="filter" onclick="clearPage(); displayProduct(filterPrice(75, 100))">
-          <label for="price4">$75 - $100</label><br>
-          <input type="radio" id="price5" name="filter" onclick="clearPage(); displayProduct(filterPrice(100, Number.POSITIVE_INFINITY))">
-          <label for="price5">Over $100</label><br>
-          <br><br>
-        </div>
+
+<form action="search.php" method="get">
+
 
 
         <!--Filter by rating -->
         <div class="searchoptions-item">
           <h2>Filter by Rating:</h2>
-          <input type="radio" id="rating1" name="filter" value="1star" onclick="clearPage(); displayProduct(sortRating(filterRating(1)))">
+          <input type="radio" id="rating1" name="rating" value="1">
           <label for="rating1">1 Star and Up</label><br>
-          <input type="radio" id="rating2" name="filter" value="2star" onclick="clearPage(); displayProduct(sortRating(filterRating(2)))">
+          <input type="radio" id="rating2" name="rating" value="2">
           <label for="rating2">2 Stars and Up</label><br>  
-          <input type="radio" id="rating3" name="filter" value="3star" onclick="clearPage(); displayProduct(sortRating(filterRating(3)))">
+          <input type="radio" id="rating3" name="rating" value="3">
           <label for="rating3">3 Stars and Up</label><br>
-          <input type="radio" id="rating4" name="filter" value="4star" onclick="clearPage(); displayProduct(sortRating(filterRating(4)))">
+          <input type="radio" id="rating4" name="rating" value="4">
           <label for="rating4">4 Stars and Up</label><br>
-          <input type="radio" id="rating5" name="filter" value="5star" onclick="clearPage(); displayProduct(sortRating(filterRating(5)))">
+          <input type="radio" id="rating5" name="rating" value="5">
           <label for="rating5">5 Stars and Up</label><br><br>
         </div>
-        <!--sort by price or rating -->
+
         <div class="searchoptions-item">
-          <h2>Sort By:</h2>
-          <input type="radio" id="sort1" name="filter" value="Best rating" onclick="clearPage(); displayProduct(sortRating(productsArray))">
-          <label>Best rating</label><br>
-          <input type="radio" id="sort2" name="filter" value="Lowest price first" onclick="clearPage(); displayProduct(sortPriceLowHigh())">
-          <label>Lowest price first</label><br>  
-          <input type="radio" id="sort3" name="filter" value="Highest price first" onclick="clearPage(); displayProduct(sortPriceHighLow())">
-          <label>Highest price first</label><br><br>
-        </div>
-        <hr class="solid">
+        <button type="submit" value="Submit">Submit</button>  
+        </div>    
+
+
+
+
+</form>
+
+
+      
       </div>
 
       <!--Listed items -->
       <div class="grid-container" id="productGrid">
 
       <?php
-        // check connection
-        require 'connect.php';
-
+ 
+        // The include statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
         include('functions.php');
 
-        include('searchfunction.php');
-        
         ?>
 
       </div>

@@ -62,13 +62,34 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 //displays the data from the database
 foreach ($rows as $row) {
     echo '<div class="grid-item">';
+    //echo '<form id="myForm" action="product.php" method="get">';
+    //echo '<input type="hidden" name="product'. $row['ID'] . '" value="' . $row['Name'] . '">';
     echo '<a href="products/' . $row['link'] . '.php"><span><h2>' . $row['Name'] . "<span><h2></a>";
+
+    //echo '<a href="#" onclick="alert('.');"><span><h2>' . $row['Name'] . "<span><h2></a>";
+    //echo '<input type="submit" name="product" value="PRODUCTNAME"><span><h2>' . $row['Name'] . "<span><h2></a>";
+    //echo '<input type="hidden" name="submit.x" value="PRODUCTNAME" />';
+    //echo '<span><input type="image" name="product" class="searchresultimage" img src="images/searchresult/' . $row['image'] . '.jpg"></span>';
+
+    //echo '<span><a href="#" onclick="document.getElementById(\'myForm\').submit();"><span><h2><img src="images/searchresult/' . $row['image'] . '.jpg" class="searchresultimage"></a></span>';
+
+
+
+    //echo '<span><a href="product.php" onclick="document.getElementById("myForm").submit(); return false;"><input type="image" name="product" value="PRODUCTNAME" img src="images/searchresult/' . $row['image'] . '.jpg" class="searchresultimage"></a></span>';
+
     echo '<span><a href="products/' . $row['link'] . '.php"><img src="images/searchresult/' . $row['image'] . '.jpg" class="searchresultimage"></a></span>';
+   //echo '<span><input type="image" name="product" class="searchresultimage" value="PRODUCTNAME" img src="images/searchresult/' . $row['image'] . '.jpg"></span>';
+   //echo '<span><input type="hidden" name="product" value="PRODUCTNAME"><img src="images/searchresult/' . $row['image'] . '.jpg" class="searchresultimage"></span>';
+   //echo '<input type="hidden" name="product" value="PRODUCTNAME">'; 
+   //echo '<span><a name="product" value="PRODUCTNAME" href="product.php"><img src="images/searchresult/' . $row['image'] . '.jpg" class="searchresultimage"></a></span>';
     echo "<span><h2>Rating: </h2>";
     displayRating($row['Rating']);
     echo "<br></span>";
     echo "<span><h2>Price: </h2> $" . $row['Price'] . " CAD</span>";
-    echo '<span><h2><a class="cta" href="products/' . $row['link'] . '.php"><button>Add to Cart</button></a><span><h2>';
+    //echo '<span class="cta"><h2><button type="submit" name="product" value="PRODUCTNAME">Add to Cart</button><span><h2>';
+    echo '<span class="cta"><h2><a href="products/' . $row['link'] . '.php"><button>Add to Cart</button><</a><span><h2>';
+
+    echo '</form>';
     echo '</div>';
 }
 

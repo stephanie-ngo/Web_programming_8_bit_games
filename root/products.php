@@ -63,10 +63,6 @@
         <div class="searchoptions-item">
         <span class="cta"><button type="submit" value="Submit">Submit</button></span>
         </div>    
-
-
-
-
 </form>
 
 
@@ -85,6 +81,8 @@
 
       </div>
     </div>
+
+    
     <!--
       block for footer contents
       -->

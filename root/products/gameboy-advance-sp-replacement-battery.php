@@ -63,9 +63,8 @@ foreach ($rows as $row) {
     //returnQuantity(); displayPrice(); are JavaScript functions to get the quantity when one has been selected and update the price, respectively
     echo '<form name="quantity"><select id="quantity" name="quantity" onchange="returnQuantity(); displayPrice();"> <option value="1" selected>1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option></select> <input type="submit" value="Add to Cart"> </form>';
     echo "</div>";
+    //to pass variable Price to external JS file, using input type=hidden; it will not be displayed on page
     echo '<input type="hidden" id="price" name="price" value="' . $row["Price"] . '" />';
-    echo '<input type="hidden" id="url" name="url" value="' . $page . '" />';
-
 }
 
 

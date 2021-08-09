@@ -11,7 +11,6 @@
     <!--Main page contents -->
     <div class="searchresults">
       
-      
 
       <!--Filter and Sort Search Results -->
       <div class="searchoptions">
@@ -82,7 +81,7 @@
       </div>
     </div>
 
-    
+
     <!--
       block for footer contents
       -->
